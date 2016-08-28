@@ -336,7 +336,7 @@ namespace Greetings1
             // Create the first Button and attach Clicked handler. 
             Button timesButton = new Button
             {
-                Text = "Double",
+                Text = "Dupláz",
                 FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Button)),
                 HorizontalOptions = LayoutOptions.CenterAndExpand
             };
@@ -350,7 +350,7 @@ namespace Greetings1
             // Create the second Button and attach Clicked handler. 
             Button divideButton = new Button
             {
-                Text = "Half",
+                Text = "Felez",
                 FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Button)),
                 HorizontalOptions = LayoutOptions.CenterAndExpand
             };
