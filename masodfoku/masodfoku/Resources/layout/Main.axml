@@ -26,9 +26,13 @@
             android:layout_height="match_parent"
             android:id="@+id/textView2" />
         <EditText
-            android:layout_width="50dp"
+            android:layout_width="100dp"
             android:layout_height="match_parent"
-            android:id="@+id/a_ertek" />
+            android:id="@+id/a_ertek"
+            android:numeric="signed"
+            android:backgroundTint="#b4b4b4ff"
+            android:inputType="numberSigned"
+            android:nextFocusDown="@+id/b_ertek" />
     </LinearLayout>
     <LinearLayout
         android:orientation="horizontal"
@@ -42,9 +46,12 @@
             android:layout_height="match_parent"
             android:id="@+id/textView3" />
         <EditText
-            android:layout_width="50dp"
+            android:layout_width="100dp"
             android:layout_height="match_parent"
-            android:id="@+id/b_ertek" />
+            android:id="@+id/b_ertek"
+            android:numeric="signed"
+            android:inputType="numberSigned"
+            android:nextFocusDown="@+id/c_ertek" />
     </LinearLayout>
     <LinearLayout
         android:orientation="horizontal"
@@ -58,9 +65,12 @@
             android:layout_height="match_parent"
             android:id="@+id/textView4" />
         <EditText
-            android:layout_width="50dp"
+            android:layout_width="100dp"
             android:layout_height="match_parent"
-            android:id="@+id/c_ertek" />
+            android:id="@+id/c_ertek"
+            android:numeric="signed"
+            android:inputType="numberSigned"
+            android:nextFocusDown="@+id/btnSzamol" />
     </LinearLayout>
     <LinearLayout
         android:orientation="horizontal"
@@ -84,9 +94,9 @@
         android:id="@+id/linearLayout5">
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:id="@+id/txtEredmeny"
             android:gravity="center_horizontal"
-            android:textSize="14dp" />
+            android:textSize="20dp" />
     </LinearLayout>
 </LinearLayout>
