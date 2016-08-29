@@ -5,10 +5,12 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Android.Content.PM;
 
 namespace masodfoku
 {
-    [Activity(Label = "masodfoku", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(Label = "masodfoku", MainLauncher = true, Icon = "@drawable/icon", 
+        ConfigurationChanges = ConfigChanges.Orientation, ScreenOrientation = ScreenOrientation.Portrait)]
     public class MainActivity : Activity
     {        
         protected override void OnCreate(Bundle bundle)
@@ -25,7 +27,10 @@ namespace masodfoku
 
             Szamol.Click += (sender, e) =>
             {
-                if (Double.Parse(Aertek.Text) == 0)
+                if (Aertek.Text == "" || Bertek.Text == "" || Certek.Text == "") {
+                    Eredmeny.Text = "Hibás adat(ok)!";
+                }
+                else if (Double.Parse(Aertek.Text) == 0.0)
                 {
                     Eredmeny.Text = "Nincs megoldása az egyenletnek!";
                 }
