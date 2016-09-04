@@ -30,8 +30,6 @@ namespace Adatb.MySQL
 
             VbtnFelvitel.Click += VbtnFelvitel_Click;
 
-
-
         }
 
         private void VbtnFelvitel_Click(object sender, EventArgs e)
