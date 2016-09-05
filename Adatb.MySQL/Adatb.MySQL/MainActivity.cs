@@ -18,6 +18,8 @@ namespace Adatb.MySQL
         private Button VbtnFelvitel, VbtnListaz;
         private TextView VtxtRendszerF;
 
+        public ArrayAdapter<string> ListAdapter { get; private set; }
+
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -31,7 +33,7 @@ namespace Adatb.MySQL
             VtxtRendszerF = FindViewById<TextView>(Resource.Id.txtRendszerF);
 
             VbtnFelvitel.Click += VbtnFelvitel_Click;
-            VbtnListaz.Click += VbtnListaz_Click;
+            VbtnListaz.Click   += VbtnListaz_Click;
 
         }
         // Adatok listázása
@@ -51,8 +53,19 @@ namespace Adatb.MySQL
                     adapter.Fill(adatok, "tabla");
                     foreach (DataRow sor in adatok.Tables["tabla"].Rows)
                     {
-                        adatbazisadatok.Add(sor[0].ToString());
+                        // adatbazisadatok.Add(sor[0].ToString());
+                        adatbazisadatok.Add(sor[1].ToString());
+                        adatbazisadatok.Add(sor[2].ToString());
                     }
+
+                    // 
+                    ListView listAdatok = FindViewById<ListView>(Resource.Id.listView1);
+                    
+                    ListAdapter = new ArrayAdapter<String>(this, Android.Resource.Layout.SimpleListItem1, adatbazisadatok);
+                    listAdatok.Adapter = ListAdapter;
+                    
+                    //
+                    VtxtRendszerF.Text = "";
                     Toast.MakeText(this, "Adatok betöltése db4free.net-ről OK!", ToastLength.Long).Show();
                 }
             }
@@ -72,15 +85,18 @@ namespace Adatb.MySQL
             MySqlConnection conn = new MySqlConnection("Server=db4free.net;Port=3306;database=teszt;User Id=osvald73;Password=csaba73;charset=utf8");
             try
             {
-                if (conn.State == ConnectionState.Closed)
+                if (String.IsNullOrEmpty(VtxtNev.ToString()) || String.IsNullOrEmpty(VtxtEmail.ToString()))
                 {
-                    conn.Open();
-                    //VtxtRendszerF.Text = "Adatbázis kapcsolat OK!";
-                    MySqlCommand cmd = new MySqlCommand("INSERT INTO tabla(nev,email) VALUES(@nev,@email)", conn);
-                    cmd.Parameters.AddWithValue("@nev", VtxtNev.Text);
-                    cmd.Parameters.AddWithValue("@email", VtxtEmail.Text);
-                    cmd.ExecuteNonQuery();
-                    Toast.MakeText(this, "Adatfelvitel db4free.net-re OK!", ToastLength.Long).Show();
+                    if (conn.State == ConnectionState.Closed)
+                    {
+                        conn.Open();
+                        //VtxtRendszerF.Text = "Adatbázis kapcsolat OK!";
+                        MySqlCommand cmd = new MySqlCommand("INSERT INTO tabla(nev,email) VALUES(@nev,@email)", conn);
+                        cmd.Parameters.AddWithValue("@nev", VtxtNev.Text);
+                        cmd.Parameters.AddWithValue("@email", VtxtEmail.Text);
+                        cmd.ExecuteNonQuery();
+                        Toast.MakeText(this, "Adatfelvitel db4free.net-re OK!", ToastLength.Long).Show();
+                    }
                 }
             }
             catch (MySqlException ex)
