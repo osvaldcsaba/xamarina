@@ -4,6 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <TextView
+        android:text="A db4free.net-en elérhető MySQL adatbázis tesztje. User:osvald73 Pass:csaba73"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2" />
+    <TextView
         android:text="Név"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
