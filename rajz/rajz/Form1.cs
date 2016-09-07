@@ -13,7 +13,7 @@ namespace rajz
 {
     public partial class Form1 : Form
     {
-        DateTime date1 = new DateTime(2016, 9, 1, 0, 0, 0);
+        DateTime date1 = new DateTime(2017, 1, 1, 0, 0, 0);
         private Bitmap m_objDrawingSurface;
         BarcodeLib.Barcode b = new BarcodeLib.Barcode();
 

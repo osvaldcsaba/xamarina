@@ -16,7 +16,7 @@ namespace belepo
     {
         private OleDbConnection connection = new OleDbConnection();
         private string old_azonosito="";
-        DateTime date1 = new DateTime(2016, 9, 1, 0, 0, 0);
+        DateTime date1 = new DateTime(2017, 1, 1, 0, 0, 0);
         public Form1()
         {
             InitializeComponent();
