@@ -85,7 +85,7 @@ namespace Adatb.MySQL
             MySqlConnection conn = new MySqlConnection("Server=db4free.net;Port=3306;database=teszt;User Id=osvald73;Password=csaba73;charset=utf8");
             try
             {
-                if (String.IsNullOrEmpty(VtxtNev.ToString()) || String.IsNullOrEmpty(VtxtEmail.ToString()))
+                if (!String.IsNullOrEmpty(VtxtNev.ToString()) || !String.IsNullOrEmpty(VtxtEmail.ToString()))
                 {
                     if (conn.State == ConnectionState.Closed)
                     {
