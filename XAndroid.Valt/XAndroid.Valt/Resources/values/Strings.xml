@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="MasodikText">Második Activity!</string>
+  <string name="MasodikButtonText">Vissza</string>
+  <string name="MainText">Main Activity</string>
+  <string name="MainButtonText">Start második Activity</string>
+  <string name="ApplicationName">XAndroid - Két Activity</string>
+</resources>
