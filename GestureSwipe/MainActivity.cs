@@ -71,7 +71,7 @@ namespace AndroidGesture
 			var point = new Point ();
 			display.GetSize (point);
 			intDisplayWidth = point.X;
-			intDisplayWidth=intDisplayWidth - (intDisplayWidth/3);
+            intDisplayWidth = intDisplayWidth / 3; //- (intDisplayWidth/2);
 			using ( var layoutParams = ( RelativeLayout.LayoutParams ) menuListView.LayoutParameters  )
 			{
 				layoutParams.Width = intDisplayWidth;
